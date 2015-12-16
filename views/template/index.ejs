@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app='stock'>
+<head>
+    <title><%= title %></title>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css'/>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+
+    <main class="container j-layout">
+        <div class="row">
+            <div class="col-md-12">
+                <form class="form-inline j-form">
+                    <div class="center-block">
+                        <div class="form-group">
+                            <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                            <input type="text" name="username" class="form-control" />
+                        </div>
+                        <a class="btn btn-primary j-add">添加</a>
+                        <a class="btn btn-danger j-del">清除</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-striped table-bordered table-hover j-table">
+                    <thead>
+                        <tr>
+                            <th>姓名</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%for (var item in list) {%>
+                        <tr>
+                            <td><%=list[item]['username']%></td>
+                        </tr>
+                        <%}%>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+    </main>
+
+    <script src="/javascripts/jquery-2.1.4.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/app.js"></script>
+</body>
+</html>
