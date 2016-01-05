@@ -22,3 +22,4 @@
 all these methods are auto created, the only thing you need to do is use them by POST 
 3. action is now only used for render the page, the filename is used as the first router.
 4. add a small demo for use, try it.
+5. add Postman api samples
