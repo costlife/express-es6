@@ -1,5 +1,7 @@
 $(function () {
 
+    var action = $('#ACTION_LINK').data('action');
+
     var $form = $('.j-form').on('submit', function (e) {
         e.preventDefault();
     });
@@ -11,7 +13,7 @@ $(function () {
     });
 
     var $btnAdd = $('.j-add').on('click', function (e) {
-        $.post('userAdd', {
+        $.post('api/' + action + '/add', {
             username: $username.val()
         }, function (resp) {
             var html = '<tr><td>' + resp.user.username + '</td></tr>';
@@ -20,10 +22,11 @@ $(function () {
         });
     });
 
-    var $btnDel = $('.j-del').on('click', function (e) {
-        $.post('userDel', {
+    var $btnClear = $('.j-clear').on('click', function (e) {
+        $.post('api/' + action + '/clear', {
         }, function (resp) {
             $('.j-table tbody').html('');
         });
     });
+    
 });

@@ -7,7 +7,7 @@
     <link rel='stylesheet' href='/stylesheets/style.css'/>
 </head>
 <body>
-
+    <a id="ACTION_LINK" href="<%=link%>" title="" data-action="<%=action%>"><%=link%></a>
     <main class="container j-layout">
         <div class="row">
             <div class="col-md-12">
@@ -18,7 +18,7 @@
                             <input type="text" name="username" class="form-control" />
                         </div>
                         <a class="btn btn-primary j-add">添加</a>
-                        <a class="btn btn-danger j-del">清除</a>
+                        <a class="btn btn-danger j-clear">清除</a>
                     </div>
                 </form>
             </div>
@@ -34,6 +34,7 @@
                     <tbody>
                         <%for (var item in list) {%>
                         <tr>
+                            <td style="display:none;"><%=list[item]['_id']%></td>
                             <td><%=list[item]['username']%></td>
                         </tr>
                         <%}%>
@@ -41,7 +42,6 @@
                 </table>
             </div>
         </div>
-        
     </main>
 
     <script src="/javascripts/jquery-2.1.4.min.js"></script>

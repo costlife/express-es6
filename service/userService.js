@@ -1,7 +1,9 @@
 'use strict';
-const userModel = process.getModel('userModel');
 
-var userAddAction = function(arg) {
+
+const userModel = process.getModel('userModel');
+const baseService = require('./baseService')(userModel);
+var userService = function(arg) {
     let res = arg.res;
     let req = arg.req;
 
@@ -15,4 +17,4 @@ var userAddAction = function(arg) {
     });
 };
 
-module.exports = userAddAction;
+module.exports = userService;
